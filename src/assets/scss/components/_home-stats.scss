@@ -1,0 +1,22 @@
+section.homeStats {
+   text-align: center;
+   background: url(../images/globeBg.jpg) 50% 50% no-repeat;
+   background-size: cover;
+
+   .column {
+
+      @include breakpoint(medium) {
+         max-width: 650px;
+         @include grid-column-position(center);
+      }
+
+      @include breakpoint(large) {
+         @include flex-grid-column(10);
+         max-width: 2000px;
+      }
+   }
+
+   h2 {
+      @include big-header;
+   }
+}

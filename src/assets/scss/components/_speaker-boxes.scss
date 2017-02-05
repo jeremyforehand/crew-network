@@ -1,0 +1,91 @@
+section.speakerBoxes {
+   background: url(../images/textureWhiteGrid.jpg);
+   text-align: center;
+
+   h2 {
+      @include big-header;
+      color: get-color(primary);
+      border-color: get-color(primary);
+
+      @include breakpoint(large) {
+         margin: 0 auto 2rem;
+      }
+   }
+}
+
+.speakerBoxContainer {
+   @include flex-grid-row;
+   @include flex-align(justify, null);
+}
+
+.speakerBox {
+   @include flex-grid-column('shrink', 0);
+   width: 48%;
+   background: #4A4A4A;
+   color: #fff;
+   margin: 0 0 2rem;
+   padding: 0 0 75px;
+   position: relative;
+
+   @include breakpoint(medium) {
+      width: 32%;
+   }
+
+   @include breakpoint(large) {
+      padding-bottom: 95px;
+      width: 24%;
+   }
+
+   h4 {
+      @include big-header;
+      color: #fff;
+      font-size: rem-calc(14px);
+      padding: 0 15px;
+      margin: 0 0 0.5rem;
+
+      @include breakpoint(large) {
+         font-size: rem-calc(20px);
+      }
+   }
+}
+
+.speakerBoxTitle {
+   font-family: $body-font-family2;
+   font-size: rem-calc(12px);
+   padding: 0 15px;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(14px);
+   }
+}
+
+.speakerBoxThumb {
+   margin: 0 0 1rem;
+
+   @include breakpoint(large) {
+      margin: 0 0 2rem;
+   }
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 110%;
+   }
+}
+
+a.speakerBoxAction {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background: get-color(accent1);
+   color: #fff;
+   font-weight: 700;
+   text-transform: uppercase;
+   display: block;
+   padding: 15px;
+
+   &:hover {
+      background: get-color(accent1-dark);
+   }
+}

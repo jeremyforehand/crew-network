@@ -1,0 +1,303 @@
+.topAction {
+   position: relative;
+   z-index: 99;
+   width: 100%;
+   padding: 0 0 0 90px;
+
+   @include breakpoint(medium) {
+      padding-left: 185px;
+   }
+
+   @include breakpoint(large) {
+      @include flex-grid-row;
+      max-width: 100%;
+   };
+
+   @include breakpoint(xlarge) {
+      padding: 0 0 0 225px;
+   }
+
+   &.home {
+
+      @include breakpoint(large) {
+         position: absolute;
+         padding: 0;
+         width: 325px;
+         top: 0;
+         right: 0;
+      }
+
+      @include breakpoint(xxlarge) {
+         width: 385px;
+      }
+   }
+}
+
+// SEARCH
+.topActionSearch {
+   @include flex-grid-row;
+   @include flex-grid-column(12, 0);
+   padding-right: 65px;
+
+   @include breakpoint(large) {
+      background: #fff;
+      @include flex-grid-column('expand');
+      padding-right: 0;
+   }
+
+   input[type="text"] {
+      @include flex-grid-column();
+      background: white;
+      appearance: none;
+      height: 65px;
+      line-height: 65px;
+      padding: 0 15px;
+      border: none;
+      color: #444;
+      margin: 0;
+      @include input-placeholder(#9b9b9b);
+      min-width: 1px;
+
+      @include breakpoint(large) {
+         height: 60px;
+         line-height: 60px;
+         text-align: left;
+      }
+   }
+
+   input[type="submit"] {
+      background: url('../images/iconSearch.png') 50% 50% no-repeat;
+      background-size: 21px auto;
+      text-indent: -9999px;
+      appearance: none;
+      border: none;
+      width: 50px;
+      @include flex-grid-column('shrink');
+
+      @include breakpoint(large) {
+         height: 60px;
+         width: 60px;
+         line-height: 60px;
+      }
+   }
+}
+
+// TABS
+.topActionTabContainer {
+   @include flex-grid-column(12, 0);
+   position: relative;
+
+   @include breakpoint(large) {
+      @include flex-grid-column('shrink', 0);
+      width: 325px;
+   }
+
+   @include breakpoint(xxlarge) {
+      width: 385px;
+   }
+}
+
+.topActionTabs {
+   @include flex-grid-row;
+}
+
+.topActionTab {
+   @include flex-grid-column(6, 0);
+   text-align: center;
+   background: get-color(primary-dark);;
+   color: #fff;
+   font-size: rem-calc(12px);
+   text-transform: uppercase;
+   border-left: 1px solid #fff;
+   cursor: pointer;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(14px);
+   }
+
+   & > span {
+      display: block;
+      line-height: 65px;
+      height: 65px;
+      border-bottom: 1px solid #fff;
+
+      @include breakpoint(large) {
+         line-height: 60px;
+         height: 60px;
+      }
+   }
+
+   &:first-child {
+      border-left: none;
+   }
+
+   &.on {
+      background: get-color(primary);
+
+      & > span {
+         border-bottom-color: get-color(primary);
+
+         &::before {
+            content: "\f00d";
+            font-family: FontAwesome;
+            display: block;
+            font-weight: normal;
+            font-size: 20px;
+         }
+      }
+   }
+
+   &:hover {
+      background: get-color(primary);
+   }
+}
+
+.topAction.home {
+
+   .topActionTab.on {
+
+      > span {
+
+         &::before {
+
+            @include breakpoint(large) {
+               display: none;
+            }
+         }
+      }
+   }
+}
+
+// TAB CONTENT
+.topActionContent {
+   position: absolute;
+   top: 65px;
+   left: 0;
+   width: 100%;
+   background: $primary-color;
+   color: #fff;
+   display: none;
+   text-align: center;
+
+   @include breakpoint(large) {
+      top: 60px;
+   }
+
+   .home & {
+
+      @include breakpoint(large) {
+         height: 380px;
+      }
+
+      @include breakpoint(xlarge) {
+         height: 480px;
+      }
+
+      @include breakpoint(xxlarge) {
+         height: 630px;
+      }
+   }
+
+   &.on {
+      display: block;
+   }
+
+   input[type="text"],
+   input[type="password"] {
+      border: none;
+      font-size: rem-calc(14px);
+      text-align: center;
+      color: #444;
+      @include input-placeholder(#BBBDBF);
+   }
+
+   input[type="submit"] {
+      @extend .button.accent1;
+      border: none;
+      appearance: none;
+      font-weight: 700;
+      border-radius: 50px;
+      display: inline-block;
+      min-width: 120px;
+      padding: 0.85em 1em;
+      margin: 0 0 32px;
+   }
+
+   .dropDownWrapper {
+      margin-bottom: 32px;
+   }
+
+   select {
+      border: none;
+      color: #444;
+      font-size: rem-calc(14px);
+   }
+
+   a, a:visited {
+      color: #fff;
+
+      &:hover {
+         opacity: 0.8;
+      }
+   }
+}
+
+.topActionContentInner {
+   padding: 35px;
+
+   @include breakpoint(xlarge) {
+      padding: 65px;
+   }
+
+   .home & {
+      @include breakpoint(large) {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 100%;
+         transform: translate(-50%, -50%);
+      }
+   }
+}
+
+.topActionHeader {
+   @include big-header;
+   color: #fff;
+   border-color: #fff;
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(30px);
+   }
+
+   span {
+
+      &::after {
+         width: 100px;
+         left: 50%;
+         right: auto;
+         transform: translate(-50%, 0);
+      }
+   }
+}
+
+.topActionSubHeader {
+   font-weight: 700;
+   margin: 0 0 2rem;
+}
+
+a.topActionForgotPassword,
+a.topActionCreateAccount,
+a.topActionNothingNear {
+   font-size: rem-calc(14px);
+   display: block;
+   text-decoration: underline;
+   font-family: $body-font-family2;
+   text-transform: none;
+}
+
+.topActionContent.login {
+
+   input[type="password"] {
+      margin-bottom: 32px;
+   }
+}

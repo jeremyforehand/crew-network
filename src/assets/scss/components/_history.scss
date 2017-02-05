@@ -1,0 +1,63 @@
+section.history {
+
+   .column {
+
+      @include breakpoint(medium) {
+         @include flex-grid-row;
+         @include flex-align(justify, middle);
+      }
+   }
+}
+
+.historyVideo {
+   position: relative;
+   margin: 0 0 2rem;
+
+   @include breakpoint(medium) {
+      @include flex-grid-column(6);
+      margin: 0;
+   }
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 56.2%;
+
+      @include breakpoint(large) {
+         padding: 0 0 65%;
+      }
+   }
+
+   iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.historyContent {
+   text-align: center;
+   font-family: $body-font-family2;
+   color: #545454;
+
+   @include breakpoint(medium) {
+      @include flex-grid-column(6);
+      text-align: left;
+   }
+
+   @include breakpoint(xlarge) {
+      @include flex-grid-column(5);
+   }
+
+   @include breakpoint(xxlarge) {
+      @include flex-grid-column(4);
+   }
+
+   h2 {
+      @include big-header;
+      color: get-color(primary);
+      border-color: get-color(primary);
+   }
+}

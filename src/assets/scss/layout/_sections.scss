@@ -1,0 +1,28 @@
+section {
+	padding: 45px 0;
+
+	@include breakpoint(medium) {
+		padding: 75px 0;
+	}
+
+	@include breakpoint(large) {
+		padding: 115px 0;
+	}
+
+	@include breakpoint(xlarge) {
+		padding: 165px 0;
+	}
+}
+
+.sectionTwo {
+
+	.row {
+		@include flex-grid-row();
+		@include flex-align(justify);
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}

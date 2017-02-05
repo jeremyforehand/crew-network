@@ -1,0 +1,75 @@
+section.biographySection {
+   padding: 0;
+
+   .column {
+
+      @include breakpoint(xlarge) {
+         @include flex-grid-column(10);
+      	@include grid-column-position(center);
+      }
+   }
+}
+
+.biographyBody {
+   padding: 25px 0;
+
+   @include breakpoint(large) {
+      padding: 50px 0;
+   }
+}
+
+.biographyMugBox {
+   background: #4A4A4A;
+   color: #fff;
+   text-align: center;
+   width: 60%;
+   margin: 0 auto 2rem;
+
+   @include breakpoint(medium) {
+      width: 330px;
+      float: left;
+      margin: 0 35px 35px 0;
+   }
+
+   @include breakpoint(large) {
+      margin: 0 70px 30px 0;
+   }
+}
+
+.biographyMug {
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 110%;
+   }
+}
+
+.biographyMugInfo {
+   padding: 15px;
+
+   @include breakpoint(large) {
+      padding: 30px 20px;
+   }
+}
+
+.biographyMugName {
+   font-size: rem-calc(16px);
+   font-weight: 700;
+   text-transform: uppercase;
+   line-height: 1.2;
+   margin: 0 0 0.6em;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(20px);
+   }
+}
+
+.biographyMugTitle {
+   font-family: $body-font-family2;
+   font-size: rem-calc(12px);
+
+   @include breakpoint(large) {
+      font-size: rem-calc(14px);
+   }
+}

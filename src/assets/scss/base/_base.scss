@@ -1,0 +1,166 @@
+body {
+
+	&.stuck {
+		overflow: hidden;
+		position: relative;
+		height: 100%;
+	}
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.wide {
+	width: 100%;
+	overflow: hidden;
+}
+
+ul,
+ol {
+	margin-bottom: $list-margin-bottom;
+
+	li {
+		line-height: 1.2;
+		margin-bottom: 0.8em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ul,
+		ol {
+			margin-top: 0.8em;
+		}
+	}
+}
+
+a {
+	color: get-color(accent1);
+}
+
+h1 {
+	color: #000;
+}
+
+h2 {
+	color: get-color(primary);
+	font-weight: 700;
+	font-size: rem-calc(20px);
+
+	@include breakpoint(large) {
+		font-size: rem-calc(25px);
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: rem-calc(30px);
+	}
+}
+
+h3 {
+	color: #000;
+	font-family: $body-font-family2;
+	font-size: rem-calc(18px);
+	font-weight: 700;
+
+	@include breakpoint(large) {
+		font-size: rem-calc(20px);
+	}
+}
+
+h4 {
+	color: #000;
+	font-size: rem-calc(18px);
+	font-weight: 700;
+
+	@include breakpoint(large) {
+		font-size: rem-calc(20px);
+	}
+}
+
+input {
+	box-shadow: none;
+}
+
+.button {
+   font-weight: 700;
+   text-transform: uppercase;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(20px);
+   }
+}
+
+a.accent1Ghost {
+	background: transparent;
+	border: 2px solid get-color(accent1);
+	color: get-color(accent1);
+
+	&:hover {
+		background: get-color(accent1);
+		color: #fff;
+	}
+}
+
+a.whiteGhost {
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+
+	&:hover {
+		background: #fff;
+		color: get-color(accent1);
+	}
+}
+
+a.getAppButton,
+a.registerTodayButton {
+	font-size: rem-calc(24px);
+
+	@include breakpoint(large) {
+		font-size: rem-calc(32px);
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: rem-calc(40px);
+	}
+}
+
+.allLink {
+
+	&::after {
+		content: "\f105";
+		font-family: FontAwesome;
+		display: inline-block;
+		margin: 0 0 0 7px;
+	}
+}
+
+.mainShade {
+	background: rgba(#000, 0.8);
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s;
+
+	&.on {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}

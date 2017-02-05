@@ -1,0 +1,29 @@
+section.mission {
+   background: url(../images/textureWhiteGrid.jpg);
+   text-align: center;
+   color: get-color(primary);
+   font-size: rem-calc(16px);
+
+   @include breakpoint(medium) {
+      font-size: rem-calc(20px);
+   }
+
+   @include breakpoint(large) {
+      font-size: rem-calc(24px);
+   }
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(30px);
+   }
+
+   .column {
+      max-width: 900px;
+      margin: 0 auto;
+   }
+
+   h2 {
+      @include big-header;
+      color: get-color(primary);
+      border-color: get-color(primary);
+   }
+}

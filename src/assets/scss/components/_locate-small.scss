@@ -1,0 +1,48 @@
+section.locateSmall {
+   background: get-color(primary-dark);
+   text-align: center;
+   color: #fff;
+
+   @include breakpoint(medium) {
+      padding: 50px 0;
+   }
+
+   span {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 0.8rem;
+      display: block;
+
+      @include breakpoint(medium) {
+         display: inline-block;
+         vertical-align: middle;
+         margin: 0 25px 0 0;
+      }
+
+      @include breakpoint(large) {
+         font-size: rem-calc(24px);
+      }
+
+      @include breakpoint(xlarge) {
+         font-size: rem-calc(30px);
+      }
+   }
+
+   .dropDownWrapper {
+      margin: 0 0 0.8rem;
+
+      @include breakpoint(medium) {
+         display: inline-block;
+         vertical-align: middle;
+         margin: 0;
+      }
+   }
+}
+
+a.findFilterNothing {
+
+   @include breakpoint(medium) {
+      display: inline-block;
+      vertical-align: middle;
+   }
+}

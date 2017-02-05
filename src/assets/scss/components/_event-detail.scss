@@ -1,0 +1,107 @@
+section.eventDetail {
+   padding: 0;
+
+   .column {
+
+      @include breakpoint(xlarge) {
+         @include flex-grid-column(10);
+         @include grid-column-position(center);
+      }
+   }
+}
+
+// EVENT DETAIL TOP
+.eventDetailTop {
+   @include flex-grid-row;
+   padding: 0 0 25px;
+   border-bottom: 1px solid #bbbdbf;
+   margin: 0 0 2rem;
+
+   @include breakpoint(medium) {
+      padding: 0;
+   }
+}
+
+.eventDetailInfo {
+   @include flex-grid-column(12, 0);
+   @include flex-order(2);
+   text-align: center;
+
+   @include breakpoint(medium) {
+      @include flex-order(1);
+      @include flex-grid-column(4);
+      padding: 25px;
+   }
+
+   @include breakpoint(large) {
+      padding: 35px 25px;
+   }
+
+   a.button {
+      display: block;
+      margin: 0 0 1rem;
+   }
+}
+
+.eventDetailDate,
+.eventDetailTime {
+   color: get-color(primary);
+   font-weight: 700;
+   font-size: rem-calc(24px);
+   margin: 0 0 1.5rem;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(30px);
+   }
+
+   span {
+      color: #4a4a4a;
+      display: block;
+      text-transform: uppercase;
+      font-size: rem-calc(18px);
+
+      @include breakpoint(large) {
+         font-size: rem-calc(20px);
+      }
+   }
+}
+
+.eventDetailThumb {
+   @include flex-grid-column(12, 0);
+   @include flex-order(1);
+   margin: 0 0 1rem;
+
+   @include breakpoint(medium) {
+      @include flex-order(2);
+      @include flex-grid-column(8);
+      margin: 0;
+      margin: 0;
+   }
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 50%;
+
+      @include breakpoint(medium) {
+         display: none;
+      }
+   }
+}
+
+// EVENT DETAIL BODY
+.eventDetailBody {
+   font-family: $body-font-family2;
+   color: #545454;
+   padding: 0 0 2rem;
+
+   @include breakpoint(medium) {
+      padding: 0 0 40px;
+   }
+
+   @include breakpoint(xlarge) {
+      @include flex-grid-column(10);
+      @include grid-column-position(center);
+      padding: 0 0 75px;
+   }
+}

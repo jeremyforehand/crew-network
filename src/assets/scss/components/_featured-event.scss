@@ -1,0 +1,105 @@
+section.featuredEvent {
+   background: url(../images/textureWhiteGrid.jpg);
+   text-align: center;
+
+   @include breakpoint(medium) {
+      padding: 60px 0;
+   }
+
+   .column {
+
+      @include breakpoint(xlarge) {
+         padding: 0;
+      }
+   }
+}
+
+.featuredEventContainer {
+   box-shadow: 2px 2px 4px rgba(#000, 0.4);
+   background: #fff;
+
+   @include breakpoint(medium) {
+      @include flex-grid-row;
+   }
+}
+
+.featuredEventContent {
+   margin: 0 0 2rem;
+
+   @include breakpoint(medium) {
+      @include flex-grid-column('expand', 0);
+      padding: 85px 25px 25px;
+      position: relative;
+      margin: 0;
+   }
+
+   @include breakpoint(large) {
+      padding: 115px 65px 50px;
+   }
+
+   @include breakpoint(xxlarge) {
+      padding: 140px 90px 70px;
+   }
+}
+
+.featuredEventDate {
+   background: #ED6B48;
+   color: #fff;
+   text-transform: uppercase;
+   font-weight: 700;
+   padding: 15px;
+   margin: 0 0 2rem;
+
+   @include breakpoint(medium) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+   }
+
+   @include breakpoint(large) {
+      font-size: rem-calc(20px);
+      padding: 20px 0;
+   }
+}
+
+h2.featuredEventTitle {
+   color: #ED6B48;
+   text-transform: uppercase;
+   font-weight: 700;
+   margin: 0 0 1rem;
+
+   @include breakpoint(medium) {
+      font-size: rem-calc(24px);
+   }
+
+   @include breakpoint(xxlarge) {
+      font-size: rem-calc(30px);
+   }
+}
+
+.featuredEventThumb {
+
+   @include breakpoint(medium) {
+      @include flex-grid-column('shrink', 0);
+      min-width: 47%;
+   }
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 70%;
+
+      @include breakpoint(medium) {
+         //display: none;
+      }
+   }
+}
+
+.featuredEventLocation {
+   margin: 0 0 2rem;
+
+   @include breakpoint(xxlarge) {
+      font-size: rem-calc(20px);
+   }
+}

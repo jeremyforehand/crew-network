@@ -1,0 +1,38 @@
+.micrositeMastheadDate {
+   position: absolute;
+   background: get-color(primary);
+   color: #fff;
+   left: 50%;
+   bottom: 0;
+   transform: translate(-50%, 0);
+   width: 100%;
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: 700;
+   padding: 25px;
+   max-width: 1000px;
+
+   @include breakpoint(large) {
+      padding: 35px;
+   }
+
+   span {
+      display: block;
+      margin: 0 0 0.8rem;
+      font-size: rem-calc(18px);
+
+      @include breakpoint(medium) {
+         display: inline-block;
+         margin: 0 35px 0 0;
+         vertical-align: middle;
+      }
+
+      @include breakpoint(large) {
+         font-size: rem-calc(24px);
+      }
+
+      @include breakpoint(xlarge) {
+         font-size: rem-calc(30px);
+      }
+   }
+}

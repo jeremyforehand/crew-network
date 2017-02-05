@@ -1,0 +1,162 @@
+footer {
+	background: get-color(primary);
+	padding: 35px 0;
+	color: #fff;
+	font-size: rem-calc(10px);
+	font-family: $body-font-family2;
+	text-align: center;
+
+	@include breakpoint(medium) {
+		text-align: left;
+	}
+
+	@include breakpoint(large) {
+		font-size: rem-calc(14px);
+		padding: 100px 0;
+	}
+
+	a, a:visited {
+		color: #fff;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.footerLogo {
+	margin: 0 auto 35px;
+
+	@include breakpoint(medium) {
+		@include flex-grid-column('shrink');
+		margin: 0 45px 0 0;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 60px;
+		height: auto;
+
+		@include breakpoint(medium) {
+			width: 100px;
+		}
+	}
+}
+
+.footerContent {
+
+	@include breakpoint(medium) {
+		@include flex-grid-column('expand',0);
+	}
+}
+
+ul.footerMenu {
+	margin: 0 0 35px;
+	padding: 0;
+	list-style: none;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $body-font-family;
+	font-size: rem-calc(14px);
+
+	@include breakpoint(medium) {
+		text-align: left;
+	}
+
+	@include breakpoint(large) {
+		font-size: rem-calc(20px);
+	}
+
+	&::after {
+		@extend .clearfix;
+	}
+
+	li {
+
+		@include breakpoint(medium) {
+			display: inline-block;
+			margin: 0 9px 0 0;
+			padding: 0 9px 0 0;
+			border-right: 2px solid #fff;
+			line-height: 1;
+			float: left;
+		}
+
+		@include breakpoint(large) {
+			margin-right: 15px;
+			padding-right: 15px;
+		}
+
+		&:last-child {
+
+			@include breakpoint(medium) {
+				border: none;
+				padding-right: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.footerMid {
+
+	@include breakpoint(medium) {
+		@include flex-grid-row;
+		margin: 0 0 21px;
+	}
+}
+
+.footerSocial {
+	text-align: center;
+	margin: 0 0 35px;
+
+	@include breakpoint(medium) {
+		text-align: left;
+		@include flex-grid-column('shrink', 0);
+		margin: 0 32px 0 0;
+	}
+
+	a, a:visited {
+		background: get-color(primary-dark);
+		display: inline-block;
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		margin: 0 1px 0 0;
+		font-size: 23px;
+
+		@include breakpoint(medium) {
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			font-size: 20px;
+		}
+
+		@include breakpoint(large) {
+			width: 38px;
+			height: 38px;
+			line-height: 38px;
+		}
+
+		&:hover {
+			background: get-color(primary);
+			opacity: 1;
+		}
+	}
+}
+
+.footerContact {
+	margin: 0 0 35px;
+
+	@include breakpoint(medium) {
+		@include flex-grid-column('expand',0);
+		margin: 0;
+	}
+}

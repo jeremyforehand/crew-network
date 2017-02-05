@@ -1,0 +1,262 @@
+section.homeResources {
+   background: url(../images/textureBlueGrid.jpg);
+   color: #fff;
+
+   .column {
+
+      @include breakpoint(medium) {
+         @include flex-grid-row;
+      }
+   }
+}
+
+// RESOURCE INTRO
+.homeResourceIntro {
+   font-family: $body-font-family2;
+   font-size: rem-calc(14px);
+   text-align: center;
+   margin-bottom: 45px;
+
+   @include breakpoint(medium) {
+      @include flex-grid-column(8);
+      @include flex-align-self(middle);
+      @include grid-column-position(center);
+      margin-bottom: 0;
+   }
+
+   @include breakpoint(large) {
+      text-align: left;
+      @include grid-column-unposition;
+      @include flex-grid-column(3, 0);
+   }
+
+   @include breakpoint(xxlarge) {
+      @include flex-align(left, middle);
+   }
+
+   h2 {
+      @include big-header;
+      color: #fff;
+   }
+
+   a.homeResourceIntroAction {
+      color: get-color(accent1);
+      font-weight: 700;
+      font-size: rem-calc(16px);
+      font-family: $body-font-family;
+
+      @include breakpoint(large) {
+         font-size: rem-calc(20px);
+      }
+
+      &:hover {
+         color: get-color(accent1-dark);
+      }
+   }
+}
+
+.homeResourceLinks {
+
+   @include breakpoint(medium) {
+      @include flex-grid-column(6);
+      @include grid-column-position(left);
+      @include flex-align-self(middle);
+      margin-bottom: 0;
+   }
+
+   @include breakpoint(large) {
+      @include flex-grid-column(5);
+   }
+
+   @include breakpoint(xlarge) {
+      @include flex-grid-column(4);
+   }
+}
+
+// RESOURCE LINKS
+.circleLinkContainer {
+   @include flex-grid-row;
+
+   &::after {
+      @extend .clearfix;
+   }
+}
+
+a.circleLink {
+   @include flex-grid-column(6);
+   text-align: center;
+   color: #BBBDBF;
+   text-transform: uppercase;
+   font-weight: 700;
+   line-height: 1.2;
+   margin-bottom: 3rem;
+
+   @include breakpoint(medium) {
+      font-size: rem-calc(12px);
+   }
+
+   @include breakpoint(large) {
+      font-size: rem-calc(14px);
+   }
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(18px);
+   }
+
+   @include breakpoint(xxlarge) {
+      font-size: rem-calc(20px);
+   }
+
+   &.on {
+      color: get-color(accent1);
+   }
+}
+
+.circleLinkCircle {
+   background: #E6E7E7;
+   border-radius: 200px;
+   text-align: center;
+   position: relative;
+   width: 100px;
+   margin: 0 auto 13px;
+
+   @include breakpoint(medium) {
+      width: 70px;
+   }
+
+   @include breakpoint(large) {
+      width: 100px;
+   }
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 100%;
+   }
+
+   .on & {
+      background: get-color(accent1);
+   }
+
+   img {
+      display: inline-block;
+      height: 35px;
+      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include breakpoint(medium) {
+         height: 25px;
+      }
+
+      @include breakpoint(large) {
+         height: 35px;
+      }
+   }
+
+   .gray {
+      display: block;
+   }
+
+   .white {
+      display: none;
+   }
+
+   .on & .gray {
+      display: none;
+   }
+
+   .on & .white {
+      display: block;
+   }
+}
+
+// RESOURCE POSTINGS
+.homeResourcePostings {
+   text-align: center;
+
+   @include breakpoint(medium) {
+      @include flex-grid-column(6);
+      @include flex-align-self(middle);
+      margin-bottom: 0;
+   }
+
+   @include breakpoint(large) {
+      @include flex-grid-column(4);
+   }
+
+   @include breakpoint(xlarge) {
+      padding: 0 35px;
+      @include grid-column-offset(1);
+   }
+
+   ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px;
+      background: #fff;
+      text-align: left;
+
+      @include breakpoint(large) {
+         max-width: 335px;
+         margin: 0 auto 15px;
+      }
+   }
+
+   li {
+      margin: 0;
+      border-bottom: 1px solid #E6E7E7;
+
+      &:last-child {
+         border: none;
+      }
+
+      a, a:visited {
+         color: #4A4A4A;
+         display: block;
+         padding: 20px 25px;
+         position: relative;
+         font-size: rem-calc(14px);
+
+         &:hover {
+            background: get-color(accent1);
+            color: #fff;
+
+            &::after {
+               color: #fff;
+            }
+         }
+
+         &::after {
+            content: "\f105";
+            display: block;
+            position: absolute;
+            font-family: FontAwesome;
+            right: 25px;
+            top: 50%;
+            transform: translate(0, -50%);
+            font-size: 30px;
+            color: get-color(accent1);
+         }
+      }
+   }
+
+   a.homeResourcePostingAll {
+      color: #fff;
+      font-weight: 700;
+
+      @include breakpoint(large) {
+         font-size: rem-calc(20px);
+      }
+
+      &:hover {
+         color: get-color(accent1);
+      }
+   }
+}
+
+.resourcePostingTitle {
+   font-weight: 700;
+}

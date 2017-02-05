@@ -1,0 +1,26 @@
+section.generalSubBody {
+   padding: 0;
+
+   .column {
+
+      @include breakpoint(xlarge) {
+         @include flex-grid-column(10, 0);
+      	@include grid-column-position(center);
+      }
+   }
+
+   .imageCaptionTop {
+      border-top: 1px solid #BBBDBF;
+      margin: 0;
+   }
+}
+
+.generalBody {
+   padding: 25px 0;
+
+   @include breakpoint(large) {
+      padding: 50px 0;
+      @include flex-grid-column(10);
+   	@include grid-column-position(center);
+   }
+}

@@ -1,0 +1,16 @@
+section.leadChange {
+   text-align: center;
+   font-size: rem-calc(14px);
+
+   @include breakpoint(large) {
+      font-size: rem-calc(18px);
+   }
+
+   h2 {
+      @include big-header;
+   }
+
+   p {
+      font-family: $body-font-family2;
+   }
+}

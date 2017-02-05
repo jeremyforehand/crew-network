@@ -1,0 +1,117 @@
+section.resourceCategories {
+   background: url(../images/textureWhiteGrid.jpg);
+   text-align: center;
+   padding: 25px 0;
+
+   @include breakpoint(medium) {
+      padding: 35px 0;
+   }
+
+   @include breakpoint(large) {
+      padding: 55px 0;
+   }
+
+   @include breakpoint(xlarge) {
+      padding: 80px 0;
+   }
+}
+
+.resourceCategoryLead {
+   color: #BBBDBF;
+   font-size: rem-calc(16px);
+   text-transform: uppercase;
+   font-weight: 700;
+   margin: 0 0 3rem;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(20px);
+      margin: 0 0 4rem;
+   }
+}
+
+.resourceCategoryBoxContainer {
+   @include flex-grid-row;
+   @include flex-align(justify, null);
+}
+
+a.resourceCategoryBox {
+   @include flex-grid-column('shrink', 0);
+   width: 49%;
+   background: #fff;
+   box-shadow: 2px 2px 4px rgba(#000, 0.4);
+   position: relative;
+   color: #4A4A4A;
+   font-size: rem-calc(12px);
+   padding: 65px 15px;
+   margin: 0 0 60px;
+
+   @include breakpoint(medium) {
+      padding-left: 35px;
+      padding-right: 35px;
+   }
+
+   @include breakpoint(large) {
+      width: 32%;
+      font-size: rem-calc(14px);
+   }
+
+   @include breakpoint(xlarge) {
+      width: 24%;
+   }
+
+   &:hover {
+      background: #E6E7E7;
+   }
+}
+
+.resourceCategoryBoxIconContainer {
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: #E6E7E7;
+   border-radius: 100px;
+   width: 80px;
+   height: 80px;
+
+   a.resourceCategoryBox:hover & {
+      background: get-color(accent1);
+
+      .gray {
+         display: none;
+      }
+
+      .white {
+         display: block;
+      }
+   }
+
+   .resourceCategoryBoxIcon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 25px;
+      width: auto;
+   }
+
+   .gray {
+      display: block;
+   }
+
+   .white {
+      display: none;
+   }
+}
+
+.resourceCategoryBoxTitle {
+   color: get-color(accent1);
+   font-weight: 700;
+   text-transform: uppercase;
+   margin: 0 0 1rem;
+   font-size: rem-calc(16px);
+
+   @include breakpoint(large) {
+      font-size: rem-calc(20px);
+   }
+}

@@ -1,0 +1,110 @@
+section.relatedBoxes {
+   background: url(../images/textureWhiteGrid.jpg);
+   text-align: center;
+   padding: 25px 0;
+
+   @include breakpoint(medium) {
+      padding: 35px 0;
+   }
+
+   @include breakpoint(large) {
+      padding: 85px 0;
+   }
+
+   @include breakpoint(xlarge) {
+      padding: 115px 0;
+   }
+
+   h2 {
+      @include big-header;
+      text-transform: none;
+      margin: 0 auto 21px;
+
+      @include breakpoint(large) {
+         margin: 0 auto 35px;
+      }
+   }
+}
+
+.relatedBoxContainer {
+   @include flex-grid-row;
+   @include flex-align(justify);
+
+   @include breakpoint(medium) {
+      margin-bottom: 40px;
+   }
+}
+
+a.relatedBox {
+   @include flex-grid-column('shrink', 0);
+   background: #fff;
+   box-shadow: 1px 1px 5px rgba(#000, 0.3);
+   margin: 0 0 2em;
+   width: 100%;
+   text-align: left;
+
+   @include breakpoint(medium) {
+      width: 48%;
+   }
+
+   @include breakpoint(xlarge) {
+      width: 24%;
+      margin-bottom: 0;
+   }
+
+   &:hover {
+      background: get-color(accent1);
+      color: #fff;
+
+      h3,
+      .relatedBoxDate,
+      .allLink,
+      p.relatedBoxLocation {
+         color: #fff;
+      }
+   }
+}
+
+.relatedBoxThumb {
+
+   &::after {
+      content: "";
+      display: block;
+      padding: 0 0 50%;
+   }
+}
+
+.relatedBoxContent {
+   padding: 15px;
+
+   @include breakpoint(xlarge) {
+      padding: 25px 35px 50px;
+   }
+
+   h3 {
+      margin: 0 0 15px;
+      font-size: rem-calc(20px);
+      font-weight: 700;
+   }
+
+   .allLink {
+      display: inline-block;
+      color: get-color(accent1);
+      font-weight: 700;
+      font-size: rem-calc(14px);
+   }
+}
+
+p.relatedBoxLocation {
+   font-family: $body-font-family2;
+   color: #4A4A4A;
+   margin: 0 0 21px;
+   font-size: rem-calc(14px);
+}
+
+.relatedBoxDate {
+   color: #9B9B9B;
+   font-family: $body-font-family2;
+   font-size: rem-calc(14px);
+   margin: 0 0 15px;
+}

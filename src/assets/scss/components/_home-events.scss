@@ -1,0 +1,101 @@
+section.homeEvent {
+   color: #fff;
+   position: relative;
+
+   @include breakpoint(xxlarge) {
+      padding: 190px 0;
+   }
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #ED6B48;
+      z-index: 1;
+
+      @include breakpoint(medium) {
+         display: none;
+      }
+   }
+}
+
+.homeEventContent {
+   position: relative;
+   z-index: 2;
+   text-align: center;
+
+   @include breakpoint(medium) {
+      text-align: left;
+      @include flex-grid-column(6, 0);
+   }
+
+   h2 {
+      @include big-header;
+      color: #fff;
+   }
+}
+
+.homeEventDate {
+   padding: 0 0 1.2rem;
+   margin: 0 0 1.4rem;
+   position: relative;
+   font-size: rem-calc(16px);
+
+   @include breakpoint(large) {
+      font-size: rem-calc(24px);
+   }
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(30px);
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      max-width: 135px;
+
+      @include breakpoint(medium) {
+         left: 0;
+         transform: translate(0,0);
+      }
+   }
+}
+
+.homeEventLocation {
+   margin: 0 0 1.2em;
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(20px);
+      margin: 0 0 2.4em;
+   }
+}
+
+.homeEventAction {
+   margin: 0 0 1.2em;
+
+   @include breakpoint(xlarge) {
+      margin: 0 0 1.8em;
+   }
+}
+
+a.homeEventSeeAll {
+   font-weight: 700;
+   color: #fff;
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(20px);
+   }
+
+   &:hover {
+      color: rgba(#fff, 0.8);
+   }
+}

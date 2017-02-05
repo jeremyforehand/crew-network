@@ -1,0 +1,21 @@
+.interiorShare {
+   border-bottom: 1px solid #bbbdbf;
+   @include flex-grid-row;
+   @include flex-align(right, top);
+
+   a, a:visited {
+      @include flex-grid-column('shrink', 0);
+      min-width: 35px;
+      max-width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      background: get-color(primary);
+      color: #fff;
+      margin: 0 0 0 1px;
+
+      &:hover {
+         background: get-color(primary-dark);
+      }
+   }
+}

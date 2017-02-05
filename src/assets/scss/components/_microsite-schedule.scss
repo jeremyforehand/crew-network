@@ -1,0 +1,57 @@
+section.micrositeSchedule {
+   background: url(../images/micrositeScheduleBg.jpg) 50% 50% no-repeat;
+   background-size: cover;
+   text-align: center;
+
+   h2 {
+      @include big-header;
+      color: get-color(primary);
+      border-color: get-color(primary);
+      text-align: center;
+   }
+
+   table {
+      background: #979797;
+      font-family: $body-font-family2;
+      margin: 0 0 4rem;
+      text-align: left;
+
+      @include breakpoint(large) {
+         max-width: 1000px;
+         margin: 0 auto 4rem;
+      }
+
+      a, a:visited {
+         color: #545454;
+
+         &:hover {
+            color: get-color(accent1);
+         }
+      }
+   }
+
+   th {
+      background: get-color(primary);
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: $body-font-family;
+      border-width: 1px;
+   }
+}
+
+.scheduleDay {
+   font-weight: 700;
+   color: get-color(secondary);
+   font-size: rem-calc(20px);
+   margin: 0 auto 0.8rem;
+   max-width: 1000px;
+
+   @include breakpoint(large) {
+      font-size: rem-calc(25px);
+   }
+
+   @include breakpoint(xlarge) {
+      font-size: rem-calc(30px);
+   }
+}
