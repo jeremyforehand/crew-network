@@ -37,7 +37,7 @@ $(document).ready(function() {
 	var navTop = $('.mainNav').offset().top;
 	var navHeight = $('.mainNav').outerHeight();
 	$('.mainNavShim').height(navHeight);
-	var scroll = $(window).scrollTop();;
+	var scroll = $(window).scrollTop();
 
 	$(window).scroll(function() {
 		if (overallWidth >= 992) {
