@@ -132,20 +132,20 @@ $(document).ready(function() {
 	});
 
 	// TOP ACTIONS
-	$('.topActionTab').click(function() {
-		if ($(this).hasClass('on') && overallWidth < 992) {
+	$('.topActionTab > span').click(function() {
+		if ($(this).parent().hasClass('on') && overallWidth < 992) {
 			$('.topActionContent').removeClass('on');
-			$(this).removeClass('on');
-		} else if ($(this).hasClass('login')) {
+			$(this).parent().removeClass('on');
+		} else if ($(this).parent().hasClass('login')) {
 			$('.topActionContent.find').removeClass('on');
 			$('.topActionContent.login').addClass('on');
 			$('.topActionTab').removeClass('on');
-			$(this).addClass('on');
-		} else if ($(this).hasClass('find')) {
+			$(this).parent().addClass('on');
+		} else if ($(this).parent().hasClass('find')) {
 			$('.topActionContent.login').removeClass('on');
 			$('.topActionContent.find').addClass('on');
 			$('.topActionTab').removeClass('on');
-			$(this).addClass('on');
+			$(this).parent().addClass('on');
 		}
 	});
 

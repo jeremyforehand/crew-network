@@ -17,7 +17,7 @@
       position: relative;
       bottom: auto;
       width: 100%;
-      padding: 25px 25px 25px 185px;
+      padding: 0 25px 0 185px;
       z-index: 97;
       margin: 0;
       text-align: center;
@@ -72,13 +72,23 @@
       @include breakpoint(large) {
          display: block;
          border: none;
-         border-right: 2px solid #fff;
-         padding: 0 11px;
+         padding: 25px 11px;
          float: left;
       }
 
       @include breakpoint(xxlarge) {
-         padding: 0 17px;
+         padding: 25px 17px;
+      }
+
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         right: -1px;
+         top: 50%;
+         border-right: 2px solid #fff;
+         transform: translate(0, -50%);
+         height: 15px;
       }
 
       a, a:visited {
@@ -127,6 +137,10 @@
          padding: 0;
          display: block;
          float: none;
+      }
+
+      &::after {
+         display: none;
       }
 
       a, a:visited {
@@ -227,6 +241,10 @@
 
       @include breakpoint(large) {
          padding: 0 7px;
+      }
+
+      &::after {
+         display: none;
       }
 
       a, a:visited {

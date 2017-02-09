@@ -25,6 +25,7 @@ section.featuredEvent {
 
 .featuredEventContent {
    margin: 0 0 2rem;
+   @include flex-grid-column('expand');
 
    @include breakpoint(medium) {
       @include flex-grid-column('expand', 0);
@@ -48,13 +49,14 @@ section.featuredEvent {
    text-transform: uppercase;
    font-weight: 700;
    padding: 15px;
-   margin: 0 0 2rem;
+   margin: 0 -0.625rem 2rem;
 
    @include breakpoint(medium) {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
+      margin: 0 0 2rem;
    }
 
    @include breakpoint(large) {

@@ -21,13 +21,13 @@ section.homeResources {
       @include flex-grid-column(8);
       @include flex-align-self(middle);
       @include grid-column-position(center);
-      margin-bottom: 0;
    }
 
    @include breakpoint(large) {
       text-align: left;
       @include grid-column-unposition;
       @include flex-grid-column(3, 0);
+      margin-bottom: 0;
    }
 
    @include breakpoint(xxlarge) {
