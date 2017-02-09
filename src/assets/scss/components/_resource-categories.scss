@@ -31,7 +31,7 @@ section.resourceCategories {
 
 .resourceCategoryBoxContainer {
    @include flex-grid-row;
-   @include flex-align(spaced, null);
+   @include flex-align(center, null);
 }
 
 a.resourceCategoryBox {

@@ -7,6 +7,14 @@ section.homeResources {
       @include breakpoint(medium) {
          @include flex-grid-row;
       }
+
+      @include breakpoint(large) {
+         padding: 0 25px;
+      }
+
+      @include breakpoint(xlarge) {
+         padding: 0 50px;
+      }
    }
 }
 

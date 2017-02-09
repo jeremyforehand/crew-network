@@ -133,7 +133,10 @@ $(document).ready(function() {
 
 	// TOP ACTIONS
 	$('.topActionTab > span').click(function() {
-		if ($(this).parent().hasClass('on') && overallWidth < 992) {
+		if ($(this).parent().hasClass('on') && !$('.mastheadHome').length) {
+			$('.topActionContent').removeClass('on');
+			$(this).parent().removeClass('on');
+		} else if ($(this).parent().hasClass('on') && overallWidth < 992) {
 			$('.topActionContent').removeClass('on');
 			$(this).parent().removeClass('on');
 		} else if ($(this).parent().hasClass('login')) {

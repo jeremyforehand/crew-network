@@ -5812,6 +5812,12 @@ section.homeResources {
       display: flex;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; } }
+  @media print, screen and (min-width: 62em) {
+    section.homeResources .column, section.homeResources .columns {
+      padding: 0 25px; } }
+  @media screen and (min-width: 75em) {
+    section.homeResources .column, section.homeResources .columns {
+      padding: 0 50px; } }
 
 .homeResourceIntro {
   font-family: "Roboto Slab", serif;
@@ -6145,6 +6151,12 @@ section.homeEvent {
     @media print, screen and (min-width: 48em) {
       section.homeEvent::before {
         display: none; } }
+  @media print, screen and (min-width: 62em) {
+    section.homeEvent .column, section.homeEvent .columns {
+      padding: 0 25px; } }
+  @media screen and (min-width: 75em) {
+    section.homeEvent .column, section.homeEvent .columns {
+      padding: 0 50px; } }
 
 .homeEventContent {
   position: relative;
@@ -8622,8 +8634,9 @@ section.resourceCategories {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 a.resourceCategoryBox {
   -webkit-box-flex: 0;
