@@ -124,7 +124,7 @@ a.findFilterNothing {
    background: #fff;
    margin: 0 0 2rem;
    box-shadow: 2px 2px 6px rgba(#000, 0.4);
-   width: 100%;
+   width: calc(100% - 20px);
 
    @include breakpoint(medium) {
       float: left;

@@ -3,12 +3,13 @@
    top: 0;
    left: 100%;
    bottom: 0;
-   overflow: auto;
+   overflow-y: scroll;
    width: calc(100% - 50px);
    z-index: 100;
    background: $secondary-color;
    transition: transform 0.2s;
    padding: 50px 0 2rem;
+   -webkit-overflow-scrolling: touch;
 
    @include breakpoint(large) {
       display: block;
@@ -81,14 +82,17 @@
       }
 
       &::after {
-         content: "";
-         display: block;
-         position: absolute;
-         right: -1px;
-         top: 50%;
-         border-right: 2px solid #fff;
-         transform: translate(0, -50%);
-         height: 15px;
+
+         @include breakpoint(large) {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -1px;
+            top: 50%;
+            border-right: 2px solid #fff;
+            transform: translate(0, -50%);
+            height: 15px;
+         }
       }
 
       a, a:visited {

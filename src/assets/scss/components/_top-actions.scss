@@ -37,12 +37,12 @@
 .topActionSearch {
    @include flex-grid-row;
    @include flex-grid-column(12, 0);
-   padding-right: 65px;
+   padding-right: 65px !important;
 
    @include breakpoint(large) {
       background: #fff;
       @include flex-grid-column('expand');
-      padding-right: 0;
+      padding-right: 0 !important;
    }
 
    input[type="text"] {

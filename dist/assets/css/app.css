@@ -4906,7 +4906,7 @@ section {
   padding-right: 0;
   padding-left: 0;
   max-width: 100%;
-  padding-right: 65px; }
+  padding-right: 65px !important; }
   @media print, screen and (min-width: 62em) {
     .topActionSearch {
       background: #fff;
@@ -4916,7 +4916,7 @@ section {
       padding-right: 0.625rem;
       padding-left: 0.625rem;
       min-width: initial;
-      padding-right: 0; } }
+      padding-right: 0 !important; } }
   @media print, screen and (min-width: 62em) and (min-width: 48em) {
     .topActionSearch {
       padding-right: 0.9375rem;
@@ -5411,7 +5411,7 @@ a.topActionNothingNear {
   top: 0;
   left: 100%;
   bottom: 0;
-  overflow: auto;
+  overflow-y: scroll;
   width: calc(100% - 50px);
   z-index: 100;
   background: #005C79;
@@ -5419,7 +5419,8 @@ a.topActionNothingNear {
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
-  padding: 50px 0 2rem; }
+  padding: 50px 0 2rem;
+  -webkit-overflow-scrolling: touch; }
   @media print, screen and (min-width: 62em) {
     .mainNav {
       display: block;
@@ -5470,16 +5471,17 @@ a.topActionNothingNear {
     @media screen and (min-width: 87.5em) {
       .mainNav li {
         padding: 25px 17px; } }
-    .mainNav li::after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: -1px;
-      top: 50%;
-      border-right: 2px solid #fff;
-      -webkit-transform: translate(0, -50%);
-              transform: translate(0, -50%);
-      height: 15px; }
+    @media print, screen and (min-width: 62em) {
+      .mainNav li::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -1px;
+        top: 50%;
+        border-right: 2px solid #fff;
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+        height: 15px; } }
     .mainNav li a, .mainNav li a:visited {
       color: #fff;
       display: block;
@@ -7028,7 +7030,7 @@ a.findFilterNothing {
   background: #fff;
   margin: 0 0 2rem;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  width: 100%; }
+  width: calc(100% - 20px); }
   @media print, screen and (min-width: 48em) {
     .findBox {
       float: left;
